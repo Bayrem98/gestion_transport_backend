@@ -14,4 +14,6 @@ export default class UpdateVoyantDto {
   chauffeur?: string;
   @IsOptional()
   destination?: string;
+  @IsOptional()
+  situation?: string;
 }

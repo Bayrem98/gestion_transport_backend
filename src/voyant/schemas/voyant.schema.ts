@@ -15,6 +15,8 @@ export class Voyant {
   chauffeur: string;
   @Prop({ require: true, type: String })
   destination: string;
+  @Prop({ require: true, type: String })
+  situation?: string;
 }
 
 export const VoyantSchema = SchemaFactory.createForClass(Voyant);
