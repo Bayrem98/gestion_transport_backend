@@ -16,7 +16,9 @@ export class Voyant {
   @Prop({ require: true, type: String })
   destination: string;
   @Prop({ require: true, type: String })
-  situation?: string;
+  situation: string;
+  @Prop({ require: true, type: String })
+  date: string;
 }
 
 export const VoyantSchema = SchemaFactory.createForClass(Voyant);

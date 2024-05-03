@@ -16,4 +16,6 @@ export default class UpdateVoyantDto {
   destination?: string;
   @IsOptional()
   situation?: string;
+  @IsOptional()
+  date?: string;
 }

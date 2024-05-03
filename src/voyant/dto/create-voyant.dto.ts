@@ -5,4 +5,5 @@ export default class CreateVoyantDto {
   chauffeur: string;
   destination: string;
   situation: string;
+  date: string;
 }

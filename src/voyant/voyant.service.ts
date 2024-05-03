@@ -1,4 +1,4 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Voyant, VoyantDocument } from './schemas/voyant.schema';
 import { Model } from 'mongoose';
@@ -7,6 +7,11 @@ import UpdateVoyantDto from './dto/update-voyant.dto';
 
 @Injectable()
 export class VoyantService {
+  async search(situation: string, date: string) {
+    const query = { situation, date };
+    return this.voyantModel.find(query).exec();
+  }
+
   constructor(
     @InjectModel(Voyant.name) private voyantModel: Model<VoyantDocument>,
   ) {}
@@ -24,9 +29,6 @@ export class VoyantService {
   }
 
   async create(createVoyantDto: CreateVoyantDto): Promise<Voyant> {
-    const user = await this.findOneByUsername(createVoyantDto.nom);
-    if (user)
-      throw new HttpException('Username already used', HttpStatus.BAD_REQUEST);
     const createdUser = new this.voyantModel(createVoyantDto);
     return createdUser.save();
   }

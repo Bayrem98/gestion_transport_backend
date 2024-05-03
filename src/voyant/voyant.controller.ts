@@ -6,6 +6,7 @@ import {
   Param,
   Post,
   Put,
+  Query,
 } from '@nestjs/common';
 import { VoyantService } from './voyant.service';
 import CreateVoyantDto from './dto/create-voyant.dto';
@@ -16,14 +17,20 @@ import UpdateVoyantDto from './dto/update-voyant.dto';
 export class VoyantController {
   constructor(private readonly voyantService: VoyantService) {}
 
+  @Get()
+  findAll(@Query('situation') situation: string, @Query('date') date: string) {
+    if (situation && date) {
+      return this.voyantService.search(situation, date);
+    } else if (situation) {
+      return this.voyantService.search(situation, '');
+    } else {
+      return this.voyantService.findAll();
+    }
+  }
+
   @Get(':id')
   findOne(@Param('id') _id: string) {
     return this.voyantService.findOne(_id);
-  }
-
-  @Get()
-  findAll() {
-    return this.voyantService.findAll();
   }
 
   @Post()
