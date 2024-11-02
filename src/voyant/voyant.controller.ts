@@ -17,7 +17,7 @@ import UpdateVoyantDto from './dto/update-voyant.dto';
 export class VoyantController {
   constructor(private readonly voyantService: VoyantService) {}
 
-  @Get()
+/*  @Get()
   findAll(@Query('situation') situation: string, @Query('date') date: string) {
     if (situation && date) {
       return this.voyantService.search(situation, date);
@@ -27,7 +27,7 @@ export class VoyantController {
       return this.voyantService.findAll();
     }
   }
-
+*/
   @Get(':id')
   findOne(@Param('id') _id: string) {
     return this.voyantService.findOne(_id);

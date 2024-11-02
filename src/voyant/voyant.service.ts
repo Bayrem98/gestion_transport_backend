@@ -7,10 +7,10 @@ import UpdateVoyantDto from './dto/update-voyant.dto';
 
 @Injectable()
 export class VoyantService {
-  async search(situation: string, date: string) {
+/*  async search(situation: string, date: string) {
     const query = { situation, date };
     return this.voyantModel.find(query).exec();
-  }
+  } */
 
   constructor(
     @InjectModel(Voyant.name) private voyantModel: Model<VoyantDocument>,

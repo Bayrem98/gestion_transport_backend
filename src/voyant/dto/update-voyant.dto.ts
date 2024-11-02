@@ -11,11 +11,9 @@ export default class UpdateVoyantDto {
   @IsOptional()
   heure?: string;
   @IsOptional()
-  chauffeur?: string;
-  @IsOptional()
   destination?: string;
   @IsOptional()
-  situation?: string;
+  plateau?: string;
   @IsOptional()
-  date?: string;
+  num_tel?: string;
 }
