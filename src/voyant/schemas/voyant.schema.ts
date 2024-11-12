@@ -9,14 +9,16 @@ export class Voyant {
   nom: string;
   @Prop({ require: true, type: String })
   planing: string;
-  @Prop({ require: true, type: String })
-  heure: string;
+  @Prop({ type: String })
+  heure?: string;
   @Prop({ require: true, type: String })
   destination: string;
   @Prop({ require: true, type: String })
   plateau: string;
   @Prop({ require: true, type: String })
   num_tel: string;
+  @Prop({ type: String })
+  chauffeur?: string;
 }
 
 export const VoyantSchema = SchemaFactory.createForClass(Voyant);

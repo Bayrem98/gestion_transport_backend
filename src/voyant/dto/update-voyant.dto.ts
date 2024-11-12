@@ -16,4 +16,6 @@ export default class UpdateVoyantDto {
   plateau?: string;
   @IsOptional()
   num_tel?: string;
+  @IsOptional()
+  chauffeur?: string;
 }
