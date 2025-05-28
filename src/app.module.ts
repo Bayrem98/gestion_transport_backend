@@ -6,6 +6,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { DepartementsModule } from './departements/departements.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { join } from 'path';
       rootPath: join(__dirname, '..'),
     }),
     VoyantModule,
+    DepartementsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
