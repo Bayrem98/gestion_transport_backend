@@ -1,11 +1,13 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, Types } from 'mongoose';
+import { Voyant } from 'src/voyant/schemas/voyant.schema';
 
 export type DepartementDocument = Departement & Document;
 
+@Schema({ _id: false })
 class LigneDepartement {
-  @Prop({ required: true })
-  salarie: string;
+  @Prop({ type: Types.ObjectId, ref: 'Voyant', required: true })
+  salarie: Types.ObjectId | Voyant; // Référence au voyant
 
   @Prop({ required: true })
   planning: string;
