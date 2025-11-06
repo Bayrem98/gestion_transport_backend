@@ -3,7 +3,7 @@ import { Type } from 'class-transformer';
 
 class LigneRamassageDto {
   @IsMongoId()
-  salarie: string; // Doit être l'ID d'un voyant existant
+  salarie: string;
 
   @IsString()
   planning: string;

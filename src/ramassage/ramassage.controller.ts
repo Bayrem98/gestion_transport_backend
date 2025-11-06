@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
 import { RamassageService } from './ramassage.service';
 import { CreateRamassageDto } from './dto/create-ramassage.dto';
 
@@ -21,13 +21,8 @@ export class RamassageController {
     return this.ramassageService.findByDate(date);
   }
 
-  @Get(':id')
-  async findOne(@Param('id') id: string) {
-    return this.ramassageService.findOne(id);
-  }
-
   @Delete(':id')
-  async remove(@Param('id') id: string) {
+  remove(@Param('id') id: string) {
     return this.ramassageService.remove(id);
   }
 }

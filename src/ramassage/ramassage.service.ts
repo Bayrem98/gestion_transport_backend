@@ -1,7 +1,7 @@
+import { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Ramassage, RamassageDocument } from './schemas/ramassage.schema';
-import { Model } from 'mongoose';
 import { CreateRamassageDto } from './dto/create-ramassage.dto';
 
 @Injectable()
@@ -18,10 +18,6 @@ export class RamassageService {
 
   async findAll(): Promise<Ramassage[]> {
     return this.ramassageModel.find().populate('lignes.salarie').exec();
-  }
-
-  async findOne(id: string): Promise<Ramassage> {
-    return this.ramassageModel.findById(id).populate('lignes.salarie').exec();
   }
 
   async findByDate(date: string): Promise<Ramassage[]> {

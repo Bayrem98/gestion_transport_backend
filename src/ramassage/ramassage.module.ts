@@ -1,8 +1,9 @@
+// ramassage.module.ts
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Ramassage, RamassageSchema } from './schemas/ramassage.schema';
 import { RamassageController } from './ramassage.controller';
 import { RamassageService } from './ramassage.service';
+import { Ramassage, RamassageSchema } from './schemas/ramassage.schema';
 
 @Module({
   imports: [

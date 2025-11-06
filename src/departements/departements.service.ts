@@ -29,7 +29,7 @@ export class DepartementsService {
   async findByDate(date: string): Promise<Departement[]> {
     return this.departementModel
       .find({ date })
-      .populate('lignes.salarie') // ← Ajout de populate ici aussi
+      .populate('lignes.salarie')
       .exec();
   }
 
