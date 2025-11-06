@@ -7,8 +7,6 @@ import { ConfigModule } from '@nestjs/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { DepartementsModule } from './departements/departements.module';
-import { RamassageController } from './ramassage/ramassage.controller';
-import { RamassageService } from './ramassage/ramassage.service';
 import { RamassageModule } from './ramassage/ramassage.module';
 
 @Module({
@@ -25,7 +23,7 @@ import { RamassageModule } from './ramassage/ramassage.module';
     DepartementsModule,
     RamassageModule,
   ],
-  controllers: [AppController, RamassageController],
-  providers: [AppService, RamassageService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
