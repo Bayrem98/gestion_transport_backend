@@ -7,6 +7,10 @@ async function bootstrap() {
       origin: '*',
     },
   });
-  await app.listen(3003);
+  
+  // Use Render.com's port or fallback to 3003
+  const port = process.env.PORT || 3003;
+  await app.listen(port);
+  console.log(`Application running on port ${port}`);
 }
 bootstrap();
